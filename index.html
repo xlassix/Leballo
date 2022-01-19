@@ -78,14 +78,13 @@
         for (var i=0; i < elements.length; i++) {
             if (i+1<_value||i-1>_value){
                 elements[i].removeAttribute("class")
-            }else{
-                if(i+1==_value){
-                    elements[i].setAttribute("class","first")
-                }else if(i==_value){
-                    elements[i].setAttribute("class","second")
-                }else{
-                    elements[i].setAttribute("class","third")
-                }
+            }
+            if(i+1==_value){
+                elements[i].setAttribute("class","first")
+            }else if(i==_value){
+                elements[(i+elements.length)%elements.length].setAttribute("class","second")
+            }else if(i-1==_value){
+                elements[(i+elements.length)%elements.length].setAttribute("class","third")
             }
         }
         console.log(elements[_value])

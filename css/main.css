@@ -133,7 +133,7 @@ section{
 }
 .slider{
     margin: 1rem auto 0rem;
-    padding: 0rem;
+    padding: 0.1rem 0.3rem;
     border: 1px solid rgba(51, 51, 51, 0.925);
     border-radius: 1rem ;
     display: flex;
@@ -143,7 +143,7 @@ section{
 
 .slider input{
     appearance: none;
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 0.5rem;
     margin: 0.1rem 0;
     border-radius: 1rem ;
     transition: 0.1s;
