@@ -4,18 +4,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css" type="text/css">
     <title>Leballo</title>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="#">Leballo</a></li>
+            <li><a href="#"><h1>Leballo</h1></a></li>
             <li><a href="#">MarketPlace</a></li>
             <li><a href="#">Resource</a></li>
             <li><a href="#">About</a></li>
-            <li><button>My Account</button></li>
-            <li><button>Wallet</button></li>
+            <li>
+                <form class="search">
+                    <input type="text"  maxlength="20"/>
+                    <button><img src="./img/0919_search_icon.svg"></button>
+                </form>
+            </li>
+            <li><button class="rounded-button">My Account</button></li>
+            <li><button class="rounded-button">Connect Wallet</button></li>
         </ul>
     </nav>
+    <section id="intro">
+        <div>
+            <h2>
+                DISCOVER, AND COLLECT DIGITAL ART NFTS
+            </h2>
+            <p>Digital MarketPlace for cryto collectibles and non-fungible tokens(NFTs), Buy, Sell and discover exclusive digital assets</p>
+            <button class="rounded-button">Explore Now</button>
+            <ul>
+                <li>
+                    <h3>98k+</h3>
+                    <p>Artworks</p>
+                </li>
+                <li>
+                    <h3>12k+</h3>
+                    <p>Auction</p>
+                </li>
+                <li>
+                    <h3>15k+</h3>
+                    <p>Artists</p>
+                </li>
+            </ul>
+        </div>
+        <div> 
+            <div class="img-slider" id="img-slider">
+                <img class="first" src="./img/test.png" alt="test image" onclick="getValue({'index':1})"/>
+                <img class="second" src="./img/test1.png" alt="test image" onclick="getValue({'index':2})"/>
+                <img class="third" src="./img/test2.png" alt="test image" onclick="getValue({'index':3})"/>
+                <img src="./img/test.png" alt="test image" onclick="getValue({'index':4})"/>
+                <img src="./img/test1.png" alt="test image" onclick="getValue({'index':5})"/>
+            </div>
+            <form class="slider" onchange="getValue()" id="form-slider">
+                <input type="radio" name="slide" value="1"/>
+                <input type="radio"  name="slide" value="2"/>
+                <input type="radio"  name="slide" value="3"/>
+                <input type="radio"  name="slide" value="4"/>
+                <input type="radio"  name="slide" value="5"/>
+            </form>
+        </div>
+    </section>
 </body>
+<script>
+    const form_elements=document.getElementById("form-slider").children
+    function getValue(_int){
+        if (_int){
+            var _value =_int.index
+        }else{
+        var _value =document.querySelector('input[name="slide"]:checked').value;
+        }
+        console.log(_value)
+        const elements=document.getElementById("img-slider").children
+
+        for (var i=0; i < elements.length; i++) {
+            if (i+1<_value||i-1>_value){
+                elements[i].removeAttribute("class")
+            }else{
+                if(i+1==_value){
+                    elements[i].setAttribute("class","first")
+                }else if(i==_value){
+                    elements[i].setAttribute("class","second")
+                }else{
+                    elements[i].setAttribute("class","third")
+                }
+            }
+        }
+        console.log(elements[_value])
+        form_elements[_value-1].checked=true
+    }
+</script>
 </html>
