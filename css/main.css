@@ -1,6 +1,8 @@
 :root{
-    --color-orange:orange;
+    --color-orange:#ff6d00;
     --color-light-text: white;
+    --color-bg2: #f8f9fb;
+    --color-light-btn2: #f2f3f5;
     --color-dark-text: black;
     --max-width: 1200px;
     --font-style1: 'Montserrat', sans-serif;
@@ -54,19 +56,22 @@ nav h1{
     padding: 0;
 }
 .rounded-button{
+    --body-color: var(--color-orange,black);
+    --text-color:var(--color-light-text,white);
     padding: 0;
     margin: 0;
-    background-color:var(--color-orange);
+    background-color:var(--body-color);
     border: 1px solid transparent;
-    color: var(--color-light-text);
+    color: var(--text-color);
     padding: 1rem 2rem;
     border-radius: 2rem;
 }
 .rounded-button:hover,.rounded-button:hover:focus{
-    color:var(--color-orange);
-    border: 1px solid var(--color-orange);
-    background-color: var(--color-light-text);
+    color:var(--body-color);
+    border: 1px solid var(--body-color);
+    background-color: var(--text-color);
     border-radius: 2rem;
+    transition: 0.5s;
 }
 .search {
     display: flex;
@@ -195,6 +200,28 @@ section{
     grid-column: 3/6;
     border: 4px solid rgba(114, 2, 114,0.9);
 }
+.bgcolor_lit_purple{
+    background-color: var(--color-bg2);
+}
+#category{
+    display: flex;
+    gap:1rem;
+}
+#category .rounded-button{
+    --body-color:var(--color-light-btn2); 
+    --text-color:var(--color-dark-text);
+}
+#category .rounded-button:last-child{
+    --body-color:var(--color-light-btn2); 
+    --text-color:var(--color-orange);
+    border-color: var(--color-orange);
+    margin: 0 0 0 auto
+}
+
+#discover h2{
+    font-size: 2rem;
+}
+
 
 @media(max-width:550px) {
     #intro{
