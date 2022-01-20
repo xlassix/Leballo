@@ -5,6 +5,7 @@
     --color-light-btn2: #f2f3f5;
     --color-dark-text: black;
     --max-width: 1200px;
+    --color-green:#1aaa53;
     --font-style1: 'Montserrat', sans-serif;
 }
 
@@ -221,16 +222,117 @@ section{
 #discover h2{
     font-size: 2rem;
 }
-
+#nfts figure{
+    background-color: var(--color-light-text);
+}
+#nfts{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:2%
+}
+#nfts figure{
+    display: grid;
+    grid-template-rows: 1fr 2rem 2rem 1fr;
+    grid-template-columns: 1fr;
+    margin: 0;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+#nfts figure>img{
+    width: 100%;
+    border-radius: 1.25rem;
+    padding: 0.5rem;
+    grid-row: 1/3;
+    grid-column: 1/2;
+}
+#nfts figure>div{
+    grid-row: 2/4;
+    grid-column: 1/2;
+}
+.avatars {
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    margin-left: 1rem;
+}
+.avatars img{
+    width: 100%;
+    grid-row: 1/2;
+    border: 3px solid var(--color-light-btn2);
+    border-radius: 10rem;
+}
+.avatars img:nth-child(1){
+    grid-column: 1/3;
+}
+.avatars img:nth-child(2){
+    grid-column: 2/4;
+}
+.avatars img:nth-child(3){
+    grid-column: 3/5;
+}
+.avatars img:nth-child(4){
+    grid-column: 4/6;
+}
+figcaption h3{
+    font-weight: normal;
+    margin-bottom: 0;
+}
+.green-eth-icon{
+    fill: currentColor;
+    width: 100%;
+}
+.flex-group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+figcaption .divider{
+    height: 1px;
+    background-color: var(--color-dark-text);
+    margin: 0.75rem;
+}
+.flex-group>div{
+    display: flex;
+    align-items: center;
+    font-size: 75%;
+    margin: 0;
+    padding: 0;
+    color: var(--color-green);
+}
+.flex-group svg{
+    width: 20px;
+    height: 25px;
+}
+figcaption{
+    padding: 1rem;
+}
+.flex-group .rounded-button{
+    padding: 0.4rem 0.9rem;
+    --text-color:var(--color-orange);
+    --body-color:var(--color-light-btn2);
+    border: none;
+}
+.flex-group a{
+    color: var(--color-orange);
+}
 
 @media(max-width:550px) {
+    #intro>div:nth-child(2){
+        display: none;
+    }
     #intro{
-    display: block;
+        display: block;
     }
     #intro>div:nth-child(2){
         margin-top:50px;
     }
     nav li:nth-child(2), nav li:nth-child(3), nav li:nth-child(4), nav li:nth-child(5),nav li:nth-child(6){
+        display: none;
+    }
+    #nfts{
+        grid-template-columns: repeat(1,1fr);
+        gap:10px
+    }
+    #category{
         display: none;
     }
 }
