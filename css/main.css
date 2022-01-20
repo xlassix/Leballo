@@ -195,3 +195,15 @@ section{
     grid-column: 3/6;
     border: 4px solid rgba(114, 2, 114,0.9);
 }
+
+@media(max-width:550px) {
+    #intro{
+    display: block;
+    }
+    #intro>div:nth-child(2){
+        margin-top:50px;
+    }
+    nav li:nth-child(2), nav li:nth-child(3), nav li:nth-child(4), nav li:nth-child(5),nav li:nth-child(6){
+        display: none;
+    }
+}
