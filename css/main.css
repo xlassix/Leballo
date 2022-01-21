@@ -425,6 +425,9 @@ figcaption{
     flex-basis: 35%;
     text-align: center;
 }
+#top-collection .price p{
+    font-weight: 400;
+}
 #top-collection{
     flex-basis: 25%;
     padding: 1rem;
@@ -475,6 +478,7 @@ figcaption{
 }
 #top-collection h5{
     margin-bottom: 0;
+    font-weight: 400;
 }
 
 #top-collection h4{
