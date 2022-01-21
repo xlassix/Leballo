@@ -111,7 +111,7 @@ nav h1{
 
 section{
     max-width: var(--max-width);
-    margin: 5rem auto;
+    margin: 2rem auto;
 }
 
 #intro ul{
@@ -427,6 +427,8 @@ figcaption{
 }
 #top-collection{
     flex-basis: 25%;
+    padding: 1rem;
+    box-shadow: -8px 6px 5px -4px rgba(0,0,0,0.1);
 }
 #top-featured svg{
     height: 25px;
@@ -459,14 +461,44 @@ figcaption{
 }
 .detail h4,.detail p{
     padding: 0;
-    margin: 0 0 0.5rem 0;
     text-align: left;
 }
 .detail>div:nth-child(2){
     margin-left: 1rem;
 }
 #top-collection h3{
+    margin-top: 0;
+}
+#top-collection article h4{
+    font-size: 125%;
+    color: var(--color-dark-text);
+}
+#top-collection h5{
+    margin-bottom: 0;
+}
 
+#top-collection h4{
+    color:var(--color-orange);
+    font-weight: 600;
+}
+#top-collection article{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-dark-text);
+}
+#top-collection h6{
+    font-size: 105%;
+}
+#top-collection .detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#top-collection .detail >div{
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 #list-featured{
     flex-basis: 33%;
@@ -485,6 +517,18 @@ figcaption{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+#top-collection>div{
+    display: grid;
+}
+.image-with-verification{
+    display: grid;
+    grid-template-columns: 3rem 25px;
+    grid-template-rows: 3rem 25px;
+}
+.image-with-verification>img{
+    grid-column: 2/3;
+    grid-row: 1/2;
 }
 @media(max-width:550px) {
     #intro>div:nth-child(2){
