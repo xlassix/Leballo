@@ -378,6 +378,7 @@ figcaption{
 #more-intro div>img{
     flex-basis: 10%;
     width: 100%;
+    max-height: 40px;
 }
 #more-intro div>article{
     flex-basis: 85%;
@@ -395,6 +396,7 @@ figcaption{
 }
 #list-featured article>img{
     flex-basis: 40%;
+    max-height: 10rem;
 }
 #list-featured article>div{
     flex-basis: 55%;
@@ -511,7 +513,8 @@ figcaption{
     border: 3px solid var(--color-green);
     color: var(--color-green);
     border-radius: 0.65rem;
-    padding: 0 0.5rem;
+    padding-left: 3px;
+    padding-right: 4px;
     transform: scale(0.75);
 }
 #list-featured .price p {
@@ -538,8 +541,11 @@ figcaption{
     #intro>div:nth-child(2){
         display: none;
     }
-    #intro{
+    #intro,#more-intro,#featured{
         display: block;
+    }
+    #list-featured>article{
+        margin: 1rem;
     }
     #intro>div:nth-child(2){
         margin-top:50px;
