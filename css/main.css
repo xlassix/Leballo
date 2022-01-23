@@ -747,4 +747,7 @@ footer form input{
     footer{
         grid-template-columns: 1fr;
     }
+    #more-intro>div:last-child img{
+        max-height: 70px;
+    }
 }
