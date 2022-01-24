@@ -712,6 +712,77 @@ footer form input{
     outline: none;
 }
 
+.bg-dark{
+    background-color: #25252d;
+}
+
+.profile-pic{
+    --radius:150px;
+    display: grid;
+    padding-top: 2.5rem;
+    grid-template-columns: 1fr var(--radius) var(--radius) 1fr;
+    grid-template-rows:20rem var(--radius)  var(--radius);
+}
+.profile-pic .wall{
+    grid-column: 1/5;
+    grid-row: 1/3;
+    object-fit: cover;
+    border-radius: 1rem;
+    max-height: 100%;
+}
+.profile-pic .main{
+    grid-column: 2/4;
+    grid-row: 2/3;
+}
+#profile .details{
+    color: var(--color-orange);
+    text-align: center;
+    margin:  0 auto;
+}
+#profile .details>div>img,#profile form img{
+    max-height: 3rem;
+    max-width: 3rem;
+    object-fit: contain;
+    margin: 1rem 0.5rem;
+}
+
+#profile form{
+    display: flex;
+    max-height: 3rem;
+    background-color: #1b1a20;
+    border-radius: 2rem;
+    width: 80%;
+}
+#profile input{
+    border: none;
+    background-color: transparent;
+    color: currentColor;
+    outline: none;
+}
+#profile form>img{
+    margin: 0;
+    padding: 0;
+}
+#profile .line{
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+    padding-bottom: 4rem;
+}
+#profile .line div{
+    display: flex;
+    align-items: center;
+    color:var(--color-orange);
+    font-weight:600;
+    padding: 0 1rem;
+    border: 0.2rem solid var(--color-orange);
+    border-color: linear-gradient(90deg, rgba(255,109,0,1) 0%, rgba(236,167,14,1) 100%);
+    border-radius: 2rem;
+}
+#profile .line p{
+    margin-right: 3rem;
+}
 @media(max-width:550px) {
     #intro>div:nth-child(2){
         display: none;
@@ -748,6 +819,6 @@ footer form input{
         grid-template-columns: 1fr;
     }
     #more-intro>div:last-child img{
-        max-height: 70px;
+        max-height: 50px;
     }
 }
