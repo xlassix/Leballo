@@ -783,6 +783,36 @@ footer form input{
 #profile .line p{
     margin-right: 3rem;
 }
+#my-nfts{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1rem;
+}
+#my-nfts figure{
+    background-color: #2b2d3a;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: 600;
+    margin: 0;
+}
+#my-nfts figure h5{
+    padding: 0;
+    margin: 0;
+    font-size: 105%;
+}
+#my-nfts figure img{
+    border-radius: 1rem;
+}
+#my-nfts figure figcaption{
+    padding: 1rem 1rem 0 1rem;
+}
+#my-nfts figure .flex-center{
+    justify-content: space-between;
+}
+.center-div{
+    margin: 0 auto;
+}
 @media(max-width:550px) {
     #intro>div:nth-child(2){
         display: none;
