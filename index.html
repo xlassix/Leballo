@@ -935,7 +935,6 @@
           'input[name="slide"]:checked'
         ).value;
       }
-      console.log(_value);
       const elements = document.getElementById("img-slider").children;
 
       for (var i = 0; i < elements.length; i++) {
@@ -958,7 +957,6 @@
           elements[0].setAttribute("class", "third");
         }
       }
-      console.log(elements[_value]);
       form_elements[_value - 1].checked = true;
     }
 
