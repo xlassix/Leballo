@@ -263,7 +263,8 @@ section,footer{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(4,1fr);
-    gap:2%
+    gap:2%;
+    grid-gap: 2%;
 }
 #nfts figure{
     display: grid;
@@ -583,6 +584,7 @@ figcaption{
     grid-template-columns: 0.75fr 1.8fr 2fr;
     grid-template-rows: 20fr 15fr 20fr 10fr 5fr;
     gap: 1rem;
+    grid-gap: 1rem;
     max-height: 40rem;
 }
 
@@ -666,6 +668,7 @@ footer{
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 2fr;
     gap:1rem;
+    grid-gap: 1rem;
 }
 footer h4{
     font-weight: 400;
@@ -721,11 +724,11 @@ footer form input{
 }
 
 .profile-pic{
-    --radius:150px;
+    --radius:100px;
     display: grid;
     padding-top: 2.5rem;
     grid-template-columns: 1fr var(--radius) var(--radius) 1fr;
-    grid-template-rows:20rem var(--radius)  var(--radius);
+    grid-template-rows: 200px var(--radius)  var(--radius);
 }
 .profile-pic .wall{
     grid-column: 1/5;
@@ -792,6 +795,7 @@ footer form input{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 1rem;
+    grid-gap: 1rem;
 }
 #my-nfts figure{
     background-color: #2b2d3a;
