@@ -721,11 +721,11 @@ footer form input{
 }
 
 .profile-pic{
-    --radius:150px;
+    --radius:100px;
     display: grid;
     padding-top: 2.5rem;
     grid-template-columns: 1fr var(--radius) var(--radius) 1fr;
-    grid-template-rows:20rem var(--radius)  var(--radius);
+    grid-template-rows: 200px var(--radius)  var(--radius);
 }
 .profile-pic .wall{
     grid-column: 1/5;
