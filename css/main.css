@@ -54,6 +54,9 @@ nav img{
     margin: 0;
     object-fit: contain;
 }
+nav ul li:first-child{
+    max-width: 5rem;
+}
 nav ul a{
     text-decoration: none;
     color: var(--color-dark-text);
