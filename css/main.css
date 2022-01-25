@@ -407,7 +407,7 @@ figcaption{
 
 #featured {
     display: flex;
-    gap:3.5%;
+    gap:1.75rem;
 }
 #list-featured article{
     display: flex;
