@@ -891,6 +891,8 @@ footer form input {
   list-style-type: none;
   z-index: -1;
   display: none;
+  padding: 0;
+  margin: 0;
 }
 .mobile-nav li{
   position: relative;
@@ -958,26 +960,28 @@ footer form input {
   .mobile-nav-icon{
     display: inline;
   }
+  .mobile-nav a{
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--color-dark);
+    line-height: 1.5;
+  }
+  
+  .mobile-nav.appear{
+    display: block;
+    animation: animate-drop 1s ease-in 1ms;
+    z-index: 0;
+  }
+  .mobile-nav-icon:hover,.mobile-nav a:hover{
+    color: var(--color-orange);
+  }
+  .mobile-nav-icon.visible{
+    transition: 1s;
+    transform: rotate(90deg);
+  }
 
 }
-.mobile-nav a{
-  text-decoration: none;
-  font-weight: 600;
-  color: var(--color-dark);
-}
 
-.mobile-nav.appear{
-  display: block;
-  animation: animate-drop 1s ease-in 1ms;
-  z-index: 0;
-}
-.mobile-nav-icon:hover,.mobile-nav a:hover{
-  color: var(--color-orange);
-}
-.mobile-nav-icon.visible{
-  transition: 1s;
-  transform: rotate(90deg);
-}
 @keyframes animate-fit {
   0% {
     right: 50px;
