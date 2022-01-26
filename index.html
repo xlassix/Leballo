@@ -931,6 +931,20 @@
   <script>
     const form_elements = document.getElementById("form-slider").children;
     const _count = 0;
+
+    var _timer = ()=>{return setInterval(() => {
+      getValue({
+        index:
+          +1 +
+          (parseInt(
+            document.querySelector('input[name="slide"]:checked').value
+          ) %
+            form_elements.length),
+      });
+    }, 2000)};
+    
+    var _timer_instance=_timer()
+
     function getValue(_int) {
       if (_int) {
         var _value = _int.index;
@@ -962,17 +976,8 @@
         }
       }
       form_elements[_value - 1].checked = true;
+      clearInterval(_timer_instance);
+      _timer_instance=_timer();
     }
-
-    var me = setInterval(() => {
-      getValue({
-        index:
-          +1 +
-          (parseInt(
-            document.querySelector('input[name="slide"]:checked').value
-          ) %
-            form_elements.length),
-      });
-    }, 2000);
   </script>
 </html>
