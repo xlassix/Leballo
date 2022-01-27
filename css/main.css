@@ -505,8 +505,9 @@ figcaption {
   padding: 1rem 0;
 }
 #top-featured h5 {
-  padding: 0;
+  padding: 0 0 0 0.4rem;
   margin: 0;
+  text-align: left;
 }
 .detail {
   display: flex;
@@ -928,6 +929,9 @@ footer form input {
 }
 .mobile-nav li {
   position: relative;
+}
+.detail ~ div .price svg{
+  transform: scale(0.8);
 }
 
 @media (max-width: 950px) {
