@@ -128,6 +128,9 @@ nav h1 {
 section,
 footer {
   max-width: var(--max-width);
+  margin: 0rem auto;
+}
+section:nth-child(n+2){
   margin: 2rem auto;
 }
 
@@ -275,7 +278,7 @@ footer {
   display: block;
 }
 .more-nft {
-  margin: 1rem auto 3rem;
+  margin: 3rem auto 3rem;
   --text-color: var(--color-orange);
   --body-color: var(--color-light-btn2);
   border-color: var(--color-orange);
@@ -492,7 +495,7 @@ figcaption {
   display: flex;
   align-items: center;
   gap: 5px;
-  padding: 0;
+  padding: 0.25rem 0 0 0;
   margin: 0;
 }
 #top-featured > div {
@@ -804,10 +807,10 @@ footer form input {
 }
 
 #profile .details > div > img {
-  max-height: 2.5rem;
-  max-width: 2.5rem;
+  max-height: 2rem;
+  max-width: 2rem;
   object-fit: contain;
-  margin: 0 0.5rem;
+  margin: 0 0.25rem;
 }
 
 #profile form {
@@ -882,6 +885,7 @@ footer form input {
 }
 #my-nfts figure .flex-center {
   justify-content: space-between;
+  font-weight: 500;
 }
 
 .center-div {
@@ -901,7 +905,7 @@ footer form input {
   background-color: var(--color-orange);
 }
 .bg-dark > section:nth-child(n + 2) {
-  padding: 0 8rem;
+  max-width: 900px;
 }
 .mobile-nav-icon {
   display: none;
@@ -940,6 +944,13 @@ footer form input {
     color: var(--color-dark);
     line-height: 1.5;
   }
+  #profile .line {
+    display: block;
+  }
+  #profile .line > div {
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
 
   .mobile-nav.appear {
     display: block;
@@ -955,7 +966,7 @@ footer form input {
     transform: rotate(90deg);
   }
   #nfts,
-  footer {
+  footer,#my-nfts {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
@@ -1026,13 +1037,7 @@ footer form input {
   #more-intro > div:last-child img {
     max-height: 50px;
   }
-  #profile .line {
-    display: block;
-  }
-  #profile .line > div {
-    justify-content: space-between;
-    margin-top: 1rem;
-  }
+
   #my-nfts {
     grid-template-columns: 1fr;
   }
