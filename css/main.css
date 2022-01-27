@@ -554,6 +554,9 @@ figcaption {
   margin-bottom: 0;
   font-weight: 400;
 }
+.flex-sb{
+  justify-content: space-between;
+}
 
 #top-collection h4 {
   color: var(--color-orange);
@@ -582,7 +585,7 @@ figcaption {
   flex-basis: 33%;
 }
 #list-featured .price {
-  border: 3px solid var(--color-green);
+  border: 1.5px solid var(--color-green);
   color: var(--color-green);
   border-radius: 0.65rem;
   padding-left: 3px;
@@ -909,6 +912,9 @@ footer form input {
 }
 .mobile-nav-icon {
   display: none;
+}
+#featured svg{
+  transform: scale(0.75);
 }
 
 .mobile-nav {
