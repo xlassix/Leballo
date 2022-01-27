@@ -2,7 +2,9 @@
   --color-orange: #ff6d00;
   --color-light-text: white;
   --color-bg2: #f8f9fb;
-  --color-light-btn2: #f2f3f5;
+  --color-light-btn2: #e2e2e2;
+  --color-light-btn3: #989898;
+  --color-light-btn4: #eeeeee;
   --color-dark-text: #565656;
   --color-dark: black;
   --max-width: 1200px;
@@ -66,7 +68,7 @@ nav ul li:nth-child(5) {
 
 nav ul a {
   font-size: 80%;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
   color: var(--color-dark);
 }
@@ -101,19 +103,20 @@ nav h1 {
 .search {
   display: flex;
   height: 3rem;
-  border: 0.05rem solid var(--color-dark-text);
-  color: var(--color-dark-text);
+  border: 0.05rem solid var(--color-light-btn4);
+  color: var(--color-light-btn4);
   border-radius: 3rem;
   outline: none;
 }
 .search input {
   background-color: transparent;
   border: none;
-  padding: 0.1rem 0.1rem 0.1rem 1rem;
+  padding: 0.1rem 0.1rem 0.1rem 1.5rem;
   outline: none;
 }
 .search button {
   background-color: transparent;
+  color: var(--color-light-btn3);
   width: 2.5rem;
   margin: 0;
   border: none;
@@ -164,8 +167,7 @@ footer {
 #intro h2 {
   color: var(--color-orange);
   font-size: 3rem;
-  line-height: 0.85;
-  margin-bottom: 1.5rem;
+  line-height: 0.9;
 }
 
 #intro ul h3 {
@@ -180,7 +182,7 @@ footer {
 .slider {
   margin: 1rem auto 0rem;
   padding: 0.1rem 0.3rem;
-  border: 1px solid rgba(51, 51, 51, 0.925);
+  border: 1px solid var(--color-light-btn2);
   border-radius: 1rem;
   display: flex;
   align-items: center;
@@ -194,10 +196,11 @@ footer {
   margin: 0.1rem 0;
   border-radius: 1rem;
   transition: 0.1s;
+  color: var(--color-light-btn2);
 }
 
 .slider input:checked {
-  background-color: rgba(51, 51, 51, 0.925);
+  background-color: var(--color-light-btn2);
 }
 .img-slider {
   position: relative;
@@ -244,6 +247,7 @@ footer {
 }
 #category {
   display: flex;
+  flex-flow: row wrap;
   gap: 1rem;
   margin: 1.5rem 0;
 }
@@ -431,6 +435,7 @@ figcaption {
 #featured {
   display: flex;
   gap: 1.75rem;
+  flex-flow: row wrap;
 }
 #list-featured article {
   display: flex;
@@ -504,10 +509,27 @@ figcaption {
   display: flex;
   align-items: center;
 }
+
+#top-featured {
+  color: var(--color-dark-text);
+}
+
+.detail ~ div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.detail ~ div .price p {
+  margin: 0;
+  padding: 0;
+}
 .detail h4,
 .price p,
 #top-featured h5 {
   font-weight: 600;
+}
+.detail h4 {
+  color: var(--color-dark);
 }
 .detail h4,
 .detail p {
@@ -538,7 +560,7 @@ figcaption {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid var(--color-dark-text);
+  border-bottom: 1px solid var(--color-light-btn4);
 }
 #top-collection h6 {
   font-size: 105%;
@@ -898,6 +920,70 @@ footer form input {
   position: relative;
 }
 
+@media (max-width: 950px) {
+  #top-collection {
+    flex-basis: 100%;
+  }
+  nav li:nth-child(n + 2) {
+    display: none;
+  }
+  #top-featured,
+  #list-featured {
+    flex-basis: 45%;
+  }
+  .mobile-nav-icon {
+    display: inline;
+  }
+  .mobile-nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--color-dark);
+    line-height: 1.5;
+  }
+
+  .mobile-nav.appear {
+    display: block;
+    animation: animate-drop 1s ease-in 1ms;
+    z-index: 0;
+  }
+  .mobile-nav-icon:hover,
+  .mobile-nav a:hover {
+    color: var(--color-orange);
+  }
+  .mobile-nav-icon.visible {
+    transition: 1s;
+    transform: rotate(90deg);
+  }
+  #nfts,
+  footer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  footer article,
+  footer div:last-child {
+    grid-column: span 2;
+  }
+
+  #intro div p,
+  #intro div h2 {
+    margin-bottom: 1rem;
+  }
+  #nfts figure {
+    margin: 1rem;
+  }
+  section,body>nav {
+    margin: 0 1rem;
+  }
+}
+@media (max-width: 800px) {
+  #intro {
+    display: block;
+  }
+  #intro div:last-child {
+    display: none;
+  }
+}
+
 @media (max-width: 550px) {
   #intro > div:nth-child(2) {
     display: none;
@@ -906,19 +992,18 @@ footer form input {
   #more-intro,
   #featured,
   #create-nfts,
-  #collections{
+  #collections {
     display: block;
   }
-  #list-featured > article ,nav {
+  #list-featured > article,
+  nav {
     margin: 1rem;
   }
   #intro > div:nth-child(2),
   #collections > div {
     margin-top: 50px;
   }
-  nav li:nth-child(n + 2) {
-    display: none;
-  }
+
   #nfts {
     grid-template-columns: repeat(1, 1fr);
     gap: 10px;
@@ -956,29 +1041,6 @@ footer form input {
   }
   .bg-dark > section:nth-child(n) {
     padding: 0;
-  }
-  .mobile-nav-icon {
-    display: inline;
-  }
-  .mobile-nav a {
-    text-decoration: none;
-    font-weight: 600;
-    color: var(--color-dark);
-    line-height: 1.5;
-  }
-
-  .mobile-nav.appear {
-    display: block;
-    animation: animate-drop 1s ease-in 1ms;
-    z-index: 0;
-  }
-  .mobile-nav-icon:hover,
-  .mobile-nav a:hover {
-    color: var(--color-orange);
-  }
-  .mobile-nav-icon.visible {
-    transition: 1s;
-    transform: rotate(90deg);
   }
 }
 
