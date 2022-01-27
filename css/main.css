@@ -111,7 +111,7 @@ nav h1 {
 .search input {
   background-color: transparent;
   border: none;
-  padding: 0.1rem 0.1rem 0.1rem 1rem;
+  padding: 0.1rem 0.1rem 0.1rem 1.5rem;
   outline: none;
 }
 .search button {
@@ -510,16 +510,16 @@ figcaption {
   align-items: center;
 }
 
-#top-featured{
+#top-featured {
   color: var(--color-dark-text);
 }
 
-.detail ~div {
+.detail ~ div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.detail ~div .price p{
+.detail ~ div .price p {
   margin: 0;
   padding: 0;
 }
@@ -528,7 +528,7 @@ figcaption {
 #top-featured h5 {
   font-weight: 600;
 }
-.detail h4{
+.detail h4 {
   color: var(--color-dark);
 }
 .detail h4,
@@ -921,14 +921,14 @@ footer form input {
 }
 
 @media (max-width: 950px) {
-
-  #top-collection{
+  #top-collection {
     flex-basis: 100%;
   }
   nav li:nth-child(n + 2) {
     display: none;
   }
-  #top-featured,#list-featured{
+  #top-featured,
+  #list-featured {
     flex-basis: 45%;
   }
   .mobile-nav-icon {
@@ -954,19 +954,28 @@ footer form input {
     transition: 1s;
     transform: rotate(90deg);
   }
-  #nfts,footer{
+  #nfts,
+  footer {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
-  footer article,footer div:last-child{
+  footer article,
+  footer div:last-child {
     grid-column: span 2;
   }
 
-  #intro div p,#intro div h2{
+  #intro div p,
+  #intro div h2 {
     margin-bottom: 1rem;
   }
+  #nfts figure {
+    margin: 1rem;
+  }
+  section,body>nav {
+    margin: 0 1rem;
+  }
 }
-@media (max-width:800px) {
+@media (max-width: 800px) {
   #intro {
     display: block;
   }
@@ -983,10 +992,11 @@ footer form input {
   #more-intro,
   #featured,
   #create-nfts,
-  #collections{
+  #collections {
     display: block;
   }
-  #list-featured > article ,nav {
+  #list-featured > article,
+  nav {
     margin: 1rem;
   }
   #intro > div:nth-child(2),
@@ -1032,7 +1042,6 @@ footer form input {
   .bg-dark > section:nth-child(n) {
     padding: 0;
   }
-
 }
 
 @keyframes animate-fit {
@@ -1060,7 +1069,6 @@ footer form input {
     height: 6rem;
   }
 }
-
 
 @keyframes animate-drop {
   0% {
