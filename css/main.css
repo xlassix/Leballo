@@ -184,29 +184,27 @@ section:nth-child(n+2){
 }
 .slider {
   margin: 1rem auto 0rem;
-  padding: 0.1rem 0.3rem;
-  border: 1px solid var(--color-light-btn2);
-  border-radius: 1rem;
-  display: flex;
-  align-items: center;
 }
 
 #myRange {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  transition: opacity .2s;
+  transition: 1s;
+  padding: 0.05rem 0.25rem;
+  border: 1px solid var(--color-light-btn2);
   color: var(--color-light-btn2);
-
+  border-radius: 1rem;
 }
 
 #myRange::-webkit-slider-thumb,#myRange::-moz-range-thumb {
   background-color: var(--color-light-btn2);
   border-radius: 1rem;
   padding: 0.2rem 0.75rem;
-  height: 0.35rem;
-  margin: 0.1rem 0;
+  height: 0.2rem;
+  margin: 0.1rem;
   border: none;
+  transition: 1s;
 }
 
 .img-slider {
