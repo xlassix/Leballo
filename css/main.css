@@ -191,20 +191,24 @@ section:nth-child(n+2){
   align-items: center;
 }
 
-.slider input {
+#myRange {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  padding: 0.25rem 1.5rem;
-  margin: 0.1rem 0;
-  border-radius: 1rem;
-  transition: 0.1s;
+  transition: opacity .2s;
   color: var(--color-light-btn2);
+
 }
 
-.slider input:checked {
+#myRange::-webkit-slider-thumb,#myRange::-moz-range-thumb {
   background-color: var(--color-light-btn2);
+  border-radius: 1rem;
+  padding: 0.2rem 0.75rem;
+  height: 0.35rem;
+  margin: 0.1rem 0;
+  border: none;
 }
+
 .img-slider {
   position: relative;
   max-height: 600px;
@@ -1069,8 +1073,8 @@ footer form input {
 
 @keyframes animate-fit {
   0% {
-    right: -150px;
-    opacity: 0.85;
+    right: -75px;
+    opacity: 0.9;
     transform: scale(0.85);
   }
   60% {
