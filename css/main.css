@@ -226,9 +226,16 @@ section:nth-child(n+2){
   grid-row: 1/2;
   position: relative;
 }
+.img-slider .second{
+  z-index: 0;
+}
+.img-slider .second{
+  z-index: 1;
+}
 .first {
   grid-column: 1/4;
   order: 3;
+  z-index: 2;
   animation: animate-fit 0.4s ease-in 1ms;
   border: 4px solid rgba(114, 2, 114, 0.1);
   height: 400px;
