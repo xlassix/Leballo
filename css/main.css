@@ -186,25 +186,39 @@ section:nth-child(n+2){
   margin: 1rem auto 0rem;
 }
 
-#myRange {
+.range_slider {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   transition: 1s;
-  padding: 0.05rem 0.25rem;
+  padding: 0.05rem 0.4rem;
   border: 1px solid var(--color-light-btn2);
   color: var(--color-light-btn2);
   border-radius: 1rem;
 }
 
-#myRange::-webkit-slider-thumb,#myRange::-moz-range-thumb {
+.range_slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 1rem;
+    padding: 0.2rem 0.75rem;
+    height: 0.2rem;
+    width: 2rem;
+    margin: 0.1rem; 
+    background: var(--color-light-btn2);
+    cursor: pointer;
+    border: none;
+} 
+.range_slider::-moz-range-thumb {
   background-color: var(--color-light-btn2);
   border-radius: 1rem;
   padding: 0.2rem 0.75rem;
   height: 0.2rem;
+  width: 2rem;
   margin: 0.1rem;
   border: none;
   transition: 1s;
+  cursor: pointer;
 }
 
 .img-slider {
