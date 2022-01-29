@@ -75,37 +75,33 @@
             class="first"
             src="./img/Asset 6.png"
             alt="test image"
-            onclick="getValue({'index':1})"
+            onclick="getValue(1)"
           />
           <img
             class="second"
             src="./img/Asset 2.png"
             alt="test image"
-            onclick="getValue({'index':2})"
+            onclick="getValue(2)"
           />
           <img
             class="third"
             src="./img/Asset 3.png"
             alt="test image"
-            onclick="getValue({'index':3})"
+            onclick="getValue(3)"
           />
           <img
             src="./img/Asset 4.png"
             alt="test image"
-            onclick="getValue({'index':4})"
+            onclick="getValue(4)"
           />
           <img
             src="./img/Asset 5.png"
             alt="test image"
-            onclick="getValue({'index':5})"
+            onclick="getValue(5)"
           />
         </div>
-        <form class="slider" onchange="getValue()" id="form-slider">
-          <input type="radio" name="slide" value="1" checked />
-          <input type="radio" name="slide" value="2" />
-          <input type="radio" name="slide" value="3" />
-          <input type="radio" name="slide" value="4" />
-          <input type="radio" name="slide" value="5" />
+        <form class="slider"  id="form-slider">
+          <input type="range" min="1" max="5" value="1" class="range_slider" name="slide" id="myRange" oninput="getValue(this.value)">
         </form>
       </div>
     </section>
@@ -172,7 +168,7 @@
             <img class="rounded-corners" src="./img/Asset 2.png" />
             <div class="flex">
               <h6>The Song Title</h6>
-              <div class="flex">
+              <div class="flex flex-sb">
                 <div class="blank_sq_image" style="--length: 3rem; --radius: 50%">
                 </div>
                 <div class="price">
@@ -193,11 +189,11 @@
             <img class="rounded-corners" src="./img/Asset 2.png" />
             <div class="flex">
               <h6>The Song Title</h6>
-              <div class="flex">
+              <div class="flex flex-sb">
                 <div class="blank_sq_image" style="--length: 3rem; --radius: 50%">
                 </div>
                 <div class="price">
-                  <svg viewbox="0 0 20px 20px" xml:space="preserve">
+                  <svg viewbox="0 0 20px 20px">
                     <path
                       style="fill:currentColor;"
                       d="M11.944 17.97L4.58 13.62 11.943 24l7.37 -10.38 -7.372 4.35h0.003zM12.056 0L4.69 12.223l7.365 4.354 7.365 -4.35L12.056 0z"
@@ -214,11 +210,11 @@
             <img class="rounded-corners" src="./img/Asset 2.png" />
             <div class="flex">
               <h6>The Song Title</h6>
-              <div class="flex">
+              <div class="flex flex-sb">
                 <div class="blank_sq_image" style="--length: 3rem; --radius: 50%">
                 </div>
                 <div class="price">
-                  <svg viewbox="0 0 20px 20px" xml:space="preserve">
+                  <svg viewbox="0 0 20px 20px" >
                     <path
                       style="fill:currentColor;"
                       d="M11.944 17.97L4.58 13.62 11.943 24l7.37 -10.38 -7.372 4.35h0.003zM12.056 0L4.69 12.223l7.365 4.354 7.365 -4.35L12.056 0z"
@@ -247,7 +243,7 @@
               <div class="detail">
                 <h5>Crypto FUNK</h5>
                 <div class="price">
-                  <svg viewbox="0 0 20px 20px" xml:space="preserve">
+                  <svg viewbox="0 0 20px 20px" >
                     <path
                       style="fill:currentColor;"
                       d="M11.944 17.97L4.58 13.62 11.943 24l7.37 -10.38 -7.372 4.35h0.003zM12.056 0L4.69 12.223l7.365 4.354 7.365 -4.35L12.056 0z"
@@ -269,7 +265,7 @@
                 <div class="detail">
                   <h5>Crypto FUNK</h5>
                   <div class="price">
-                    <svg viewbox="0 0 20px 20px" xml:space="preserve">
+                    <svg viewbox="0 0 20px 20px">
                       <path
                         style="fill:currentColor;"
                         d="M11.944 17.97L4.58 13.62 11.943 24l7.37 -10.38 -7.372 4.35h0.003zM12.056 0L4.69 12.223l7.365 4.354 7.365 -4.35L12.056 0z"
@@ -939,32 +935,21 @@
     </section>
   </body>
   <script>
-    const form_elements = document.getElementById("form-slider").children;
-    const _count = 0;
-
+    const elements = document.getElementById("img-slider").children;
     var _timer = ()=>{return setInterval(() => {
-      getValue({
-        index:
-          +1 +
-          (parseInt(
-            document.querySelector('input[name="slide"]:checked').value
-          ) %
-            form_elements.length),
-      });
+      const slider_range=document.getElementById("myRange")
+      console.log((parseInt(slider_range.value)%parseInt(elements.length))+1)
+      getValue(
+        (parseInt(slider_range.value)+1)%parseInt(elements.length)+1
+      );
     },999999)};
     
     var _timer_instance=_timer()
 
     function getValue(_int) {
-      if (_int) {
-        var _value = _int.index;
-      } else {
-        var _value = document.querySelector(
-          'input[name="slide"]:checked'
-        ).value;
-      }
+      console.log(_int)
+      var _value = parseInt(_int);
       const elements = document.getElementById("img-slider").children;
-
       for (var i = 0; i < elements.length; i++) {
         if (i + 1 < _value || i - 1 > _value) {
           elements[i].removeAttribute("class");
@@ -985,7 +970,7 @@
           elements[0].setAttribute("class", "third");
         }
       }
-      form_elements[_value - 1].checked = true;
+      document.getElementById("myRange").value=_value
       clearInterval(_timer_instance);
       _timer_instance=_timer();
     }
