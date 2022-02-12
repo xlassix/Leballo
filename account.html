@@ -78,7 +78,7 @@
         </div>
       </section>
       <section id="my-nfts">
-        <figure>
+        <figure onclick="onCardClick()">
           <img src="./img/Asset 5.png"/>
           <figcaption>
             <h5>Song Title</h5>
@@ -93,7 +93,7 @@
             </div>
           </figcaption>
         </figure>
-        <figure>
+        <figure onclick="onCardClick()">
           <img src="./img/Asset 5.png"/>
           <figcaption>
             <h5>Song Title</h5>
@@ -108,7 +108,7 @@
             </div>
           </figcaption>
         </figure>
-        <figure>
+        <figure onclick="onCardClick()">
           <img src="./img/Asset 5.png"/>
           <figcaption>
             <h5>Song Title</h5>
@@ -123,7 +123,7 @@
             </div>
           </figcaption>
         </figure>
-        <figure>
+        <figure onclick="onCardClick()">
           <img src="./img/Asset 5.png"/>
           <figcaption>
             <h5>Song Title</h5>
@@ -138,7 +138,7 @@
             </div>
           </figcaption>
         </figure>
-        <figure>
+        <figure onclick="onCardClick()">
           <img src="./img/Asset 5.png"/>
           <figcaption>
             <h5>Song Title</h5>
@@ -153,7 +153,7 @@
             </div>
           </figcaption>
         </figure>
-        <figure>
+        <figure onclick="onCardClick()">
           <img src="./img/Asset 5.png"/>
           <figcaption>
             <h5>Song Title</h5>
@@ -168,7 +168,7 @@
             </div>
           </figcaption>
         </figure>
-        <figure>
+        <figure onclick="onCardClick()">
           <img src="./img/Asset 5.png"/>
           <figcaption>
             <h5>Song Title</h5>
@@ -183,7 +183,7 @@
             </div>
           </figcaption>
         </figure>
-        <figure>
+        <figure onclick="onCardClick()">
           <img src="./img/Asset 5.png"/>
           <figcaption>
             <h5>Song Title</h5>
@@ -208,6 +208,9 @@
     function toggleNavVisiblity(){
       document.querySelector('.mobile-nav-icon').classList.toggle("visible")
       document.querySelector('.mobile-nav').classList.toggle("appear")
+    }
+    function onCardClick(){
+      window.location.href="detail.html"
     }
   </script>
 </html>
